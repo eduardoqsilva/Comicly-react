@@ -1,9 +1,15 @@
+import { Background } from "./components/Background"
+import { Search } from "./components/Search"
 
 
 function App() {
 
   return (
-    <h1>Hello</h1>
+    <>
+      <Background>
+        <Search /> 
+      </Background>
+    </>
   )
 }
 
