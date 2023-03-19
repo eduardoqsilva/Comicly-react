@@ -5,7 +5,7 @@ export function Search() {
   return(
     <SearchWrapper>
       <MagnifyingGlass color="#0D9BEB" size={32} weight={"bold"}/>
-      <input type="text" /> 
+      <input type="text" placeholder="look for your hero here"/> 
     </SearchWrapper>
   )
 }

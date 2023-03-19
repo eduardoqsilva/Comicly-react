@@ -8,7 +8,7 @@ export const SearchWrapper = styled.div`
   width: 100%;
   max-width: 600px;
   padding: 0.5rem;
-  border-radius: 25px;
+  border-radius: 8px;
   background-color: #fff;
 
 
