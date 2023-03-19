@@ -2,7 +2,7 @@ import { Background } from "./components/Background"
 import { Search } from "./components/Search"
 import { Wrapper } from "./components/Wrapper"
 import logoName from "./assets/logoName/comicly.png"
-import { Logo } from "./components/logo"
+import { Logo } from "./components/Logo"
 
 function App() {
 
