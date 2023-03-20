@@ -8,7 +8,7 @@ interface Type {
 
 export const WrapperChartStyled = styled.div<Type>`
   display: grid;
-  gap: 1rem;
+  gap: 0.78rem;
   justify-items: left;
   align-items: center;
   grid-template-columns: auto 2fr;
