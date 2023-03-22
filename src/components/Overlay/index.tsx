@@ -6,26 +6,39 @@ import { XCircle } from "@phosphor-icons/react";
 interface OverlayType {
   show: boolean
   handleSetShow: () => void
-  data: object
+  data: object[] | any | undefined
+}
+
+function ObjToArrayOfNumbers(obj:object) {
+ if(obj) {
+  let values = Object.values(obj)
+  let numbers = values.map(value => +value)
+  return numbers
+ }else {
+    return [0, 0, 0, 0, 0, 0]
+ }
 }
 
 export function Overlay({show, handleSetShow, data}:OverlayType) {
+
+  const status = ObjToArrayOfNumbers( data ? data[0]?.powerstats : {})
+
   return (
     <OverlayStyled show={show}>
       <div className="grid">
         <div className="image">
-          <img src={"https://www.superherodb.com/pictures2/portraits/10/100/1496.jpg"}/>
+          <img src={data ? data[0]?.image.url : ''}/>
         </div>
         <div className="info">
-          <h1>Batman</h1>
-          <span><strong>Name:</strong> Terry McGinnis</span>
-          <span><strong>Place of birth:</strong> Gotham City, 25th Century</span>
-          <span><strong>first-appearance:</strong> Batman Beyond #1</span>
-          <span><strong>Publisher:</strong> DC Comics</span>
+          <h1>{data ? data[0]?.name : ''}</h1>
+          <span><strong>Name:</strong> {data ? data[0]?.biography?.['full-name'] : ''}</span>
+          <span><strong>Place of birth: </strong>{data ? data[0]?.biography?.['place-of-birth'] : ''}</span>
+          <span><strong>first-appearance: </strong> {data ? data[0]?.biography?.['first-appearance'] : ''}</span>
+          <span><strong>Publisher:</strong> {data ? data[0]?.biography.publisher : ''}</span>
         </div>
         <div className="stats">
           <Chart  
-            data={[81, 40 , 29, 55, 63, 30]}
+            data={status}
             legends={
               ['🧠 intelligence',
                '💪 strength', 
