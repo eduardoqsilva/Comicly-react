@@ -5,12 +5,10 @@ import { useFetching } from "./services/api/useFetching"
 import { Background } from "./components/Background"
 import { Search } from "./components/Search"
 import { Wrapper } from "./components/Wrapper"
-import { Logo } from "./components/Logo"
 import { Overlay } from "./components/Overlay"
 import { Loading } from "./components/Loading"
 
 import logoName from "./assets/logoName/comicly.png"
-import imgLogo from "/favicon.svg"
 
 
 
@@ -32,7 +30,6 @@ function App() {
 
   return (
     <>
-      <Logo srcImg={imgLogo}/>
       <Background>
         <Wrapper>
           <img src={logoName} />

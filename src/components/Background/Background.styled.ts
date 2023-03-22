@@ -3,6 +3,7 @@ import { keyframes } from "styled-components";
 
 import background from "../../assets/background/background.webp"
 import right from "../../assets/background/comic.jpg"
+import favicon  from "/favicon.svg"
 
 
 const move =  keyframes`
@@ -49,6 +50,18 @@ export const GridContainer = styled.div`
 
   position: relative;
   z-index: 10;
+
+  &::before {
+    content: '';
+    width: 60px;
+    height: 60px;
+    background-image: url(${favicon});
+    background-size: cover;
+
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+  }
 
   @media (max-width: 700px) {
     grid-template-columns: 100%;
