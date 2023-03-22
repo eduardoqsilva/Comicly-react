@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
 import background from "../../assets/overlay/background.png"
 
@@ -10,6 +10,7 @@ const move =  keyframes`
 
 interface OverlayType {
   show: boolean
+  error: boolean
 }
 export const OverlayStyled = styled.div<OverlayType>`
   width: 100%;
@@ -92,6 +93,33 @@ export const OverlayStyled = styled.div<OverlayType>`
       font-weight: 500;
       font-size: 1rem;
     }
+
+    ${(props) => props.error
+      ?css`
+        &::after {
+          content: 'No Result';
+          width: 100%;
+          height: 100%;
+          
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+          background-color: rgb(0,0,0);
+
+          color: #fff;
+          font-family: 'Roboto', sans-serif;
+          font-weight: bold;
+          font-size: 2rem;
+
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 50;
+        }
+      `
+      : ''
+    }
   }
 `
 
@@ -105,6 +133,7 @@ export const Close = styled.button`
   position: absolute;
   top: 2rem;
   left: 2rem;
+  z-index: 999;
 
   transition: all .09s ease-in;
   & .icon {

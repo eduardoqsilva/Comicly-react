@@ -24,7 +24,7 @@ export function Overlay({show, handleSetShow, data}:OverlayType) {
   const status = ObjToArrayOfNumbers( data ? data[0]?.powerstats : {})
 
   return (
-    <OverlayStyled show={show}>
+    <OverlayStyled show={show} error={data === undefined}>
       <div className="grid">
         <div className="image">
           <img src={data ? data[0]?.image.url : ''}/>
