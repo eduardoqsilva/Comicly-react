@@ -1,10 +1,13 @@
 import { LogoStyled } from "./logo.styled";
-import logo from "/favicon.svg"
 
-export function Logo() {
+
+interface LogoType {
+  srcImg: string
+}
+export function Logo({srcImg}:LogoType) {
   return (
     <LogoStyled>
-      <img src={logo}/>
+      <img src={srcImg}/>
     </LogoStyled>
   )
 }
