@@ -18,6 +18,6 @@ export const SearchWrapper = styled.div`
     font-size: 1.7rem;
     outline: none;
     border: none;
-    flex-grow: 1;
+    width: 100%;
   }
 `

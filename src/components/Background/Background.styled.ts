@@ -50,6 +50,10 @@ export const GridContainer = styled.div`
   position: relative;
   z-index: 10;
 
+  @media (max-width: 700px) {
+    grid-template-columns: 100%;
+  }
+
   & .leftDecal {
     height: 100%;
     width: 30%;
@@ -74,6 +78,10 @@ export const GridContainer = styled.div`
  
       background-color: #fff;
       clip-path: polygon(19% 0, 23% 0, 4% 100%, 0 100%);
+    }
+
+    @media (max-width: 700px) {
+      display: none;
     }
   }
 `

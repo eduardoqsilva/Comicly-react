@@ -31,6 +31,10 @@ export const OverlayStyled = styled.div<OverlayType>`
   background-size: 100px;
   animation: ${move} 40s linear infinite;
 
+  @media (max-width: 500px) {
+    overflow: scroll;
+  }
+
   & .grid {
     width: 100%;
     max-width: 1100px;
@@ -41,6 +45,12 @@ export const OverlayStyled = styled.div<OverlayType>`
     align-items: center;
     justify-items: center;
     gap: 1rem;
+   
+    @media (max-width: 500px) {
+      grid-template-columns: 100%;
+      grid-template-rows: auto 220px 220px;
+      height: 100%;
+    }
   }
 
   & .stats {
@@ -65,6 +75,11 @@ export const OverlayStyled = styled.div<OverlayType>`
       object-fit: cover;
       width: 100%;
       height: 100%;
+    }
+
+    @media (max-width: 500px) {
+      grid-row: span none;
+      grid-column: span none;
     }
   }
   & .info {
